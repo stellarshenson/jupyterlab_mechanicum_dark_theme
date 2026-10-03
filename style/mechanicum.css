@@ -1,0 +1,504 @@
+/* -----------------------------------------------------------------------------
+| Copyright (c) Konrad Jelen.
+| Distributed under the terms of the Modified BSD License.
+|---------------------------------------------------------------------------- */
+
+/*
+ * The ornament of the Mechanicum theme: cloth, gold thread, iron and seals.
+ *
+ * Two rules keep the theme usable:
+ * - text areas (editor, notebook, terminal, file list rows) stay flat and dark;
+ *   ornament sits on the frame around them
+ * - nothing moves, and no large area is brighter than the crimson of the cloth
+ *
+ * The theme sets no font family: text keeps the font of JupyterLab.
+ */
+
+:root {
+  --mech-gold: #cba552;
+  --mech-gold-bright: #e3c878;
+  --mech-gold-dark: #8a6a2c;
+  --mech-crimson: #7d241e;
+  --mech-crimson-dark: #4f1512;
+  --mech-iron: #14100f;
+}
+
+/* only the background: selected code keeps its colours */
+::selection {
+  background: var(--mech-crimson);
+}
+
+/* ---------------------------------------------------------------------------
+ * Cloth: the frame of the application is crimson cloth
+ * ------------------------------------------------------------------------- */
+
+#jp-top-panel,
+.jp-Toolbar,
+.lm-Menu,
+.jp-Dialog-content,
+#jp-left-stack > .lm-Widget,
+#jp-right-stack > .lm-Widget,
+.lm-CommandPalette,
+.jp-LauncherCard {
+  background-image: url('./images/cloth.jpg');
+  background-size: 128px 128px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Top bar: the emblem, the menu in capitals, and a frieze of mottos
+ * ------------------------------------------------------------------------- */
+
+/* the frieze shows in the free middle of the bar: the menu at the left and the items at the right stay on plain cloth */
+#jp-top-panel {
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--jp-layout-color1) 0,
+      var(--jp-layout-color1) 520px,
+      rgba(36, 22, 21, 0) 680px
+    ),
+    linear-gradient(
+      270deg,
+      var(--jp-layout-color1) 0,
+      var(--jp-layout-color1) 270px,
+      rgba(36, 22, 21, 0) 400px
+    ),
+    url('./images/frieze.svg'), url('./images/cloth.jpg');
+  background-position:
+    0 0,
+    0 0,
+    right center,
+    0 0;
+  background-repeat: no-repeat, no-repeat, repeat-x, repeat;
+  background-size:
+    auto,
+    auto,
+    auto 100%,
+    128px 128px;
+  border-bottom: 1px solid var(--mech-gold-dark);
+}
+
+#jp-menu-panel,
+#jp-top-bar,
+#jp-top-panel .lm-MenuBar {
+  background: transparent;
+}
+
+/* stylelint-disable selector-id-pattern */
+
+/* contain: the whole emblem shows, whatever height the bar has */
+#jp-MainLogo {
+  background: url('./images/emblem.png') center / contain no-repeat;
+}
+
+#jp-MainLogo > * {
+  visibility: hidden;
+}
+/* stylelint-enable selector-id-pattern */
+
+.lm-MenuBar-item {
+  font-size: 11.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.lm-MenuBar-item.lm-mod-active,
+.lm-MenuBar.lm-mod-active .lm-MenuBar-item.lm-mod-active {
+  background: var(--mech-crimson);
+  color: #f6ecce;
+}
+
+/* menus: a cloth with a stitched hem */
+.lm-Menu {
+  border: 1px solid var(--mech-gold-dark);
+  outline: 1px dashed rgba(203, 165, 82, 0.45);
+  outline-offset: -4px;
+  padding: 5px 4px;
+}
+
+.lm-Menu-item.lm-mod-active {
+  background: var(--mech-crimson);
+  color: #f6ecce;
+}
+
+.lm-Menu-item[data-type='separator'] > div::after {
+  border-top: 1px dashed var(--mech-gold-dark);
+}
+
+/* ---------------------------------------------------------------------------
+ * Main area tabs: crimson banners on plain iron
+ * ------------------------------------------------------------------------- */
+
+.lm-DockPanel-tabBar {
+  background: var(--mech-iron);
+}
+
+.lm-DockPanel-tabBar .lm-TabBar-tab {
+  background: #1d1312;
+  color: var(--jp-ui-font-color2);
+  letter-spacing: 0.03em;
+}
+
+.lm-DockPanel-tabBar .lm-TabBar-tab:hover:not(.lm-mod-current) {
+  background: var(--mech-crimson-dark);
+  color: var(--jp-ui-font-color0);
+}
+
+.lm-DockPanel-tabBar .lm-TabBar-tab.lm-mod-current {
+  background: linear-gradient(#872a22, #5c1a16);
+  border-color: var(--mech-gold-dark);
+  box-shadow: inset 0 0 0 1px rgba(227, 200, 120, 0.28);
+  color: #f6ecce;
+}
+
+/* stylelint-disable no-descending-specificity */
+
+/* ---------------------------------------------------------------------------
+ * Activity bars: plain iron
+ * ------------------------------------------------------------------------- */
+
+.jp-SideBar.lm-TabBar {
+  background: var(--mech-iron);
+}
+
+.jp-SideBar .lm-TabBar-tab {
+  border-bottom: 1px solid rgba(138, 106, 44, 0.35);
+}
+
+.jp-SideBar .lm-TabBar-tab:hover:not(.lm-mod-current) {
+  background: rgba(79, 21, 18, 0.9);
+}
+
+.jp-SideBar .lm-TabBar-tab.lm-mod-current {
+  background: var(--mech-crimson);
+  box-shadow: inset 0 0 0 1px rgba(227, 200, 120, 0.5);
+}
+
+/* stylelint-enable no-descending-specificity */
+
+/* ---------------------------------------------------------------------------
+ * Side panels: titles in gold capitals over an embroidered band
+ * ------------------------------------------------------------------------- */
+
+.jp-AccordionPanel-title,
+.jp-SidePanel-header,
+.jp-stack-panel-header,
+.jp-extensionmanager-headerText {
+  letter-spacing: 0.1em;
+  color: var(--mech-gold);
+}
+
+.jp-AccordionPanel-title {
+  background:
+    linear-gradient(
+      90deg,
+      var(--mech-crimson-dark) 0,
+      var(--mech-crimson-dark) 45%,
+      rgba(79, 21, 18, 0.2) 100%
+    ),
+    url('./images/band.svg') right center / 20px 12px repeat-x,
+    var(--mech-crimson-dark);
+  border-top: 1px solid var(--mech-gold-dark);
+  border-bottom: 1px solid var(--mech-gold-dark);
+}
+
+.jp-DirListing-header {
+  background: var(--mech-crimson-dark);
+  border-bottom: 1px solid var(--mech-gold-dark);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--mech-gold);
+}
+
+/* selected rows: crimson with a gold thread, in place of a bright gold block */
+.jp-DirListing-item.jp-mod-selected,
+.jp-DirListing-item.jp-mod-selected.jp-mod-running {
+  background: var(--mech-crimson);
+  box-shadow: inset 3px 0 0 var(--mech-gold);
+  color: #f6ecce;
+}
+
+.jp-DirListing-item.jp-mod-selected .jp-DirListing-itemModified,
+.jp-DirListing-item.jp-mod-selected .jp-DirListing-itemFileSize {
+  color: #e6d9b8;
+}
+
+.lm-CommandPalette-item.lm-mod-active,
+.jp-Completer-item.jp-mod-active,
+.jp-PluginList li.jp-mod-selected,
+.jp-TableOfContents-content .jp-tocItem-active,
+.jp-RunningSessions-item.jp-mod-selected {
+  background: var(--mech-crimson);
+  color: #f6ecce;
+}
+
+.lm-CommandPalette-header {
+  letter-spacing: 0.1em;
+  color: var(--mech-gold);
+  border-bottom: 1px dashed var(--mech-gold-dark);
+}
+
+.jp-BreadCrumbs {
+  letter-spacing: 0.03em;
+}
+
+/* ---------------------------------------------------------------------------
+ * Launcher: a steel strip with the Cog Mechanicum above the cards, cards as
+ * stitched patches. The three images of the strip come from tools/strip.py
+ * ------------------------------------------------------------------------- */
+
+.jp-Launcher-content::before {
+  content: '';
+  display: block;
+  height: 68px;
+  margin: 6px 0 10px;
+  background:
+    url('./images/strip-centre.jpg') center / auto 100% no-repeat,
+    url('./images/strip-cap.jpg') left center / auto 100% no-repeat,
+    url('./images/strip-cap.jpg') right center / auto 100% no-repeat,
+    url('./images/strip-plate.jpg') left center / auto 100% repeat-x;
+}
+
+.jp-Launcher-cwd h3,
+.jp-Launcher-sectionTitle {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mech-gold);
+}
+
+.jp-Launcher-sectionHeader {
+  background: url('./images/band.svg') left bottom / 20px 12px repeat-x;
+  border-bottom: 0;
+  padding-bottom: 14px;
+}
+
+.jp-LauncherCard {
+  position: relative;
+  background-color: var(--mech-crimson-dark);
+  border: 1px solid var(--mech-gold-dark);
+  border-radius: 3px;
+  outline: 1px dashed rgba(203, 165, 82, 0.5);
+  outline-offset: -5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.jp-LauncherCard::before,
+.jp-LauncherCard::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  width: 11px;
+  height: 11px;
+  background: url('./images/cog.svg') center / contain no-repeat;
+  opacity: 0.75;
+}
+
+.jp-LauncherCard::before {
+  left: 8px;
+}
+
+.jp-LauncherCard::after {
+  right: 8px;
+}
+
+.jp-LauncherCard:hover {
+  background-color: var(--mech-crimson);
+  outline-color: var(--mech-gold-bright);
+}
+
+.jp-LauncherCard-label {
+  letter-spacing: 0.04em;
+  color: var(--jp-ui-font-color0);
+}
+
+/* the main area while no tab is open: a hanging of the cult */
+#jp-main-dock-panel {
+  background:
+    url('./images/hanging.png') center / auto min(52%, 380px) no-repeat,
+    var(--jp-layout-color0);
+}
+
+/* ---------------------------------------------------------------------------
+ * Notebook and rendered text: an illuminated manuscript
+ * ------------------------------------------------------------------------- */
+
+.jp-RenderedHTMLCommon h1,
+.jp-RenderedHTMLCommon h2,
+.jp-RenderedHTMLCommon h3 {
+  letter-spacing: 0.04em;
+}
+
+.jp-RenderedHTMLCommon h1 {
+  color: var(--mech-gold-bright);
+  font-variant: small-caps;
+  padding-bottom: 16px;
+  background: url('./images/band.svg') left bottom / 20px 12px repeat-x;
+}
+
+.jp-RenderedHTMLCommon h2 {
+  color: var(--mech-gold);
+  border-bottom: 1px dashed var(--mech-gold-dark);
+  padding-bottom: 4px;
+}
+
+.jp-RenderedHTMLCommon h3 {
+  color: #e2a58f;
+}
+
+.jp-RenderedHTMLCommon hr {
+  height: 12px;
+  border: 0;
+  background: url('./images/band.svg') center / 20px 12px repeat-x;
+}
+
+.jp-RenderedHTMLCommon blockquote {
+  margin-left: 0;
+  padding: 6px 14px;
+  border-left: 3px solid var(--mech-crimson);
+  background: rgba(214, 198, 159, 0.06);
+  color: var(--jp-content-font-color1);
+  font-style: italic;
+}
+
+.jp-RenderedHTMLCommon :not(pre) > code {
+  background: var(--jp-layout-color1);
+  border: 1px solid var(--jp-layout-color2);
+  border-radius: 2px;
+  color: var(--mech-gold-bright);
+  padding: 0 3px;
+}
+
+.jp-RenderedHTMLCommon thead {
+  background: var(--mech-crimson-dark);
+  border-bottom: 1px solid var(--mech-gold-dark);
+  color: var(--mech-gold-bright);
+  letter-spacing: 0.04em;
+}
+
+.jp-RenderedHTMLCommon strong {
+  color: var(--jp-content-font-color0);
+}
+
+.jp-RenderedHTMLCommon h1::first-letter {
+  color: #dc7560;
+  font-size: 1.3em;
+}
+
+.jp-RenderedHTMLCommon ul > li::marker {
+  content: '\2699  ';
+  color: var(--mech-gold-dark);
+}
+
+.jp-InputPrompt,
+.jp-OutputPrompt {
+  font-size: 12px;
+}
+
+/* the active cell: a crimson ribbon with a gold stitch, and a seal beside its prompt */
+.jp-Notebook .jp-Cell.jp-mod-active .jp-Collapser {
+  background:
+    linear-gradient(var(--mech-gold) 55%, rgba(203, 165, 82, 0) 0) center top /
+      2px 9px repeat-y,
+    var(--mech-crimson);
+}
+
+.jp-Notebook .jp-Cell.jp-mod-active .jp-InputArea-prompt {
+  background: url('./images/seal.svg') 3px 4px / 12px 16px no-repeat;
+}
+
+/* ---------------------------------------------------------------------------
+ * Dialogs: a stitched cloth with a purity seal
+ * ------------------------------------------------------------------------- */
+
+.jp-Dialog-content {
+  position: relative;
+  border: 1px solid var(--mech-gold-dark);
+  outline: 1px dashed rgba(203, 165, 82, 0.5);
+  outline-offset: -6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+}
+
+.jp-Dialog-content::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  width: 24px;
+  height: 33px;
+  background: url('./images/seal.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+
+.jp-Dialog-header {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mech-gold-bright);
+  padding-right: 34px;
+}
+
+button.jp-Dialog-button.jp-mod-styled {
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+button.jp-Dialog-button.jp-mod-accept {
+  border: 1px solid var(--mech-gold);
+  color: #f6ecce;
+}
+
+button.jp-Dialog-button.jp-mod-reject {
+  border: 1px solid var(--jp-layout-color4);
+  color: var(--jp-ui-font-color0);
+}
+
+button.jp-Dialog-button.jp-mod-warn {
+  border: 1px solid var(--jp-error-color2);
+  color: #f6ecce;
+}
+
+/* ---------------------------------------------------------------------------
+ * Status bar: iron, with the binary cant running through it
+ * ------------------------------------------------------------------------- */
+
+#jp-main-statusbar,
+.jp-StatusBar-Widget {
+  background:
+    linear-gradient(
+      90deg,
+      var(--mech-iron) 0,
+      var(--mech-iron) 44%,
+      rgba(20, 16, 15, 0) 50%,
+      rgba(20, 16, 15, 0) 66%,
+      var(--mech-iron) 72%
+    ),
+    url('./images/binary.svg') center / auto 100% repeat-x,
+    var(--mech-iron);
+  border-top: 1px solid var(--mech-gold-dark);
+}
+
+/* ---------------------------------------------------------------------------
+ * Small parts
+ * ------------------------------------------------------------------------- */
+
+.jp-Toolbar {
+  border-bottom: 1px solid rgba(138, 106, 44, 0.55);
+}
+
+.jp-Tooltip,
+.jp-Completer,
+.jp-HoverBox {
+  border: 1px solid var(--mech-gold-dark);
+}
+
+/* stylelint-disable selector-class-pattern */
+.jp-Notification-Toast,
+.Toastify__toast {
+  border: 1px solid var(--mech-gold-dark);
+  outline: 1px dashed rgba(203, 165, 82, 0.4);
+  outline-offset: -4px;
+}
+/* stylelint-enable selector-class-pattern */
+
+/* EOF */
