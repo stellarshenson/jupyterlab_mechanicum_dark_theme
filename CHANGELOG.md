@@ -4,6 +4,12 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.7] - 2026-10-07
+
+### Fixed
+
+- The gold line of the selected tab has one colour along its top, its sides and its top corners. In 1.0.5 one pixel at each top corner was brighter than the line beside it; it showed on the selected tab of a tab bar that is not the active one, in a split layout (`DEF-TABS-4`)
+
 ## [1.0.5] - 2026-10-07
 
 ### Fixed

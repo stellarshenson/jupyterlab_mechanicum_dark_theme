@@ -24,6 +24,19 @@ The tab bar of the main area, the selected tab and the strip under the tab bar
   - root-cause: 2026-10-07T16:50:20Z @kj extension sets `background-color` only; the theme's gradient is a `background-image` and shows in the tab's padding
   - log: 2026-10-07T16:50:20Z @kj added
   - log: 2026-10-07T16:57:03Z @kj closed: fixed: a selected tab with a `jp-colourful-tab-` class gets `background-image: none` and `box-shadow: none`
+- [x] `DEF-TABS-4` **Doubled gold pixel at the top corners of the selected tab** - MINOR; selected tab of a tab bar that is not the active one (split layout): the 1px corner of the gold line is rgb(177, 117, 73), the line beside it rgb(159, 86, 57); introduced by the fix of DEF-TABS-1 in 1.0.5; `style/mechanicum.css`
+  - evidence: build 1.0.6, Chrome 154, split layout, device scale 1 and 2: corner pixel rgb(159, 86, 57) equals the top line rgb(159, 85, 56); tab bottom row and strip both rgb(92, 26, 22)
+  - related: DEF-TABS-1
+  - repro: Mechanicum theme, two terminals, drag one tab to the right edge, click the left bar's tab, read the top corner pixels of the right bar's selected tab
+  - test-tags: MANUAL
+  - root-cause: 2026-10-07T17:25:19Z @kj the three inset box-shadow segments overlap in the top corners, two layers of alpha 0.28
+  - log: 2026-10-07T17:25:19Z @kj added
+  - log: 2026-10-07T17:28:14Z @kj closed: fixed: the gold line is one ring again; a 1px line in the strip colour covers its bottom segment
+- [ ] `DEF-TABS-5` **Label of an unselected coloured tab is under contrast 4.5** - MEDIUM; unselected tab coloured by `jupyterlab_colourful_tab_extension`: label `#a39373` on the fill reads rose 3.83, peach 3.32, lemon 2.94, mint 3.06, sky 3.91, lavender 3.91; project rule is 4.5; present before 1.0.5; `style/mechanicum.css`
+  - repro: Mechanicum theme, right-click a terminal tab, Tab Colour, Yellow, select another tab, compare the label colour with the tab fill
+  - test-tags: MANUAL
+  - root-cause: 2026-10-07T17:25:19Z @kj label colour is `--jp-ui-font-color2`, chosen for the uncoloured fill `#1d1312` (6.05); the extension's unselected fills are lighter
+  - log: 2026-10-07T17:25:19Z @kj added
 
 ## Terminal `TERM`
 

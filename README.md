@@ -52,7 +52,7 @@ Recite it once before a long training run. Recite it twice before a demo.
 
 A blinded adept computes nothing. The ornament must not make the lab harder to use. Three rules hold everywhere:
 
-- **Contrast** - every text and code colour has a contrast of 4.8 or more against the editor background; body text has 10 or more
+- **Contrast** - every text and code colour has a contrast of 4.8 or more against the editor background; body text has 10 or more, and the terminal's grey-green default text has 8.4
 - **No bright areas** - no large area is brighter than the crimson of the cloth. Selected rows are crimson with a gold thread, and no row is a block of gold
 - **No motion** - the theme has no animation
 

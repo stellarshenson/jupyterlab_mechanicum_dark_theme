@@ -164,15 +164,14 @@ body > * {
   color: var(--jp-ui-font-color0);
 }
 
-/* the gold line runs along the top and the sides. The bottom has none, so the tab joins
-   the strip under it */
+/* the gold line is one ring. A line in the colour of the strip covers its bottom segment,
+   so the tab joins the strip under it */
 .lm-DockPanel-tabBar .lm-TabBar-tab.lm-mod-current {
   background: linear-gradient(#872a22, var(--mech-banner-foot));
   border-color: var(--mech-gold-dark);
   box-shadow:
-    inset 0 1px 0 rgba(227, 200, 120, 0.28),
-    inset 1px 0 0 rgba(227, 200, 120, 0.28),
-    inset -1px 0 0 rgba(227, 200, 120, 0.28);
+    inset 0 -1px 0 var(--mech-banner-foot),
+    inset 0 0 0 1px rgba(227, 200, 120, 0.28);
   color: #f6ecce;
 }
 
