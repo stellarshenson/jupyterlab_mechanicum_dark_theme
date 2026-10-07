@@ -21,11 +21,31 @@
   --mech-crimson: #7d241e;
   --mech-crimson-dark: #4f1512;
   --mech-iron: #14100f;
+  --mech-banner-foot: #5c1a16; /* the bottom of the selected tab and the strip under the tab bar */
+  --mech-phosphor: #9eb59c; /* terminal text, the grey-green of an old terminal: 8.4 on the terminal background */
+  --mech-parchment: var(
+    --jp-ui-font-color0
+  ); /* the theme's own value, kept for the children of body */
 }
 
 /* only the background: selected code keeps its colours */
 ::selection {
   background: var(--mech-crimson);
+}
+
+/* ---------------------------------------------------------------------------
+ * Terminal: the grey-green text of an old terminal
+ * ------------------------------------------------------------------------- */
+
+/* the terminal reads its text colour from --jp-ui-font-color0 as computed on body. The value
+   changes on body alone: the children of body get the theme's value back, so no other text
+   changes colour */
+body {
+  --jp-ui-font-color0: var(--mech-phosphor);
+}
+
+body > * {
+  --jp-ui-font-color0: var(--mech-parchment);
 }
 
 /* ---------------------------------------------------------------------------
@@ -144,11 +164,29 @@
   color: var(--jp-ui-font-color0);
 }
 
+/* the gold line runs along the top and the sides. The bottom has none, so the tab joins
+   the strip under it */
 .lm-DockPanel-tabBar .lm-TabBar-tab.lm-mod-current {
-  background: linear-gradient(#872a22, #5c1a16);
+  background: linear-gradient(#872a22, var(--mech-banner-foot));
   border-color: var(--mech-gold-dark);
-  box-shadow: inset 0 0 0 1px rgba(227, 200, 120, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(227, 200, 120, 0.28),
+    inset 1px 0 0 rgba(227, 200, 120, 0.28),
+    inset -1px 0 0 rgba(227, 200, 120, 0.28);
   color: #f6ecce;
+}
+
+/* the strip under the tab bar of a panel with no toolbar buttons, such as a terminal: it
+   continues the selected tab, as in the sibling themes */
+.jp-MainAreaWidget > .jp-Toolbar.jp-Toolbar-micro {
+  background: var(--mech-banner-foot);
+}
+
+/* a tab coloured by jupyterlab_colourful_tab_extension. The extension sets a background
+   colour only, so the gradient and the gold line are removed and the colour fills the tab */
+.lm-DockPanel-tabBar .lm-TabBar-tab.lm-mod-current[class*='jp-colourful-tab-'] {
+  background-image: none;
+  box-shadow: none;
 }
 
 /* stylelint-disable no-descending-specificity */

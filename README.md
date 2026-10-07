@@ -37,12 +37,12 @@ Recite it once before a long training run. Recite it twice before a demo.
 
 ## What the theme changes
 
-- **Text areas** - the editor, the notebook, the terminal and the file list are flat and nearly black, with parchment-coloured text. No pattern lies behind text
+- **Text areas** - the editor, the notebook, the terminal and the file list are flat and nearly black, with parchment-coloured text; the terminal's default text is the grey-green of an old terminal. No pattern lies behind text
 - **Panels and toolbars** - crimson cloth with gold stitching
 - **Top bar** - the Cog Mechanicum as the icon in the top-left corner, the menu in capitals, and a frieze of Latin mottos in the free middle of the bar
 - **Fonts** - the theme sets no font: all text keeps the font of JupyterLab
 - **Activity bars** - plain iron; the open panel's icon stands on crimson
-- **Tabs of the main area** - the open tab is a crimson banner with a thin gold edge, on a bar of plain iron
+- **Tabs of the main area** - the open tab is a crimson banner with a thin gold edge, on a bar of plain iron; the strip under the tab bar continues the banner
 - **Launcher** - a thin strip of riveted steel across the top: the Cog Mechanicum, a skull that is half bone and half machine in a gear, between the words `ADEPTUS` and `MECHANICUS` in gold, steel plates with a gold rail beside it and hazard stripes at both ends; section titles over an embroidered band, cards as stitched patches with gears in the corners
 - **Notebook** - headings in gold with an embroidered band, a red first letter in the title, gears as list bullets, a crimson ribbon and a purity seal on the active cell
 - **Dialogs and menus** - cloth with a stitched hem; a purity seal hangs in the corner of every dialog
