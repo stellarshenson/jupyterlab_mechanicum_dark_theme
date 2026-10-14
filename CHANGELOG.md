@@ -4,6 +4,13 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.9] - 2026-10-14
+
+### Fixed
+
+- The file browser row under a dragged file is readable: parchment text on crimson with a gold line on every side, in place of parchment text on pale parchment (1.3:1 → 8.3:1)
+- The drag image of a file uses the sidebar colour with the main text colour and an accent border, in place of a half-transparent fill under grey text
+
 ## [1.0.7] - 2026-10-07
 
 ### Fixed

@@ -261,6 +261,29 @@ body > * {
   color: #e6d9b8;
 }
 
+/* file browser drag and drop - the stock rules put the parchment row text on the pale
+   --jp-brand-color3 (1.3:1) and the drag image on a half-transparent fill; the row under a
+   dragged file is crimson with a gold thread on every side (8.3:1), the drag image a patch
+   of the sidebar colour with a gold edge (10.8:1) */
+.jp-DirListing-item.jp-mod-dropTarget {
+  background: var(--mech-crimson);
+  box-shadow: inset 0 0 0 1px var(--mech-gold);
+  color: #f6ecce;
+}
+
+.jp-DirListing-item.jp-mod-dropTarget .jp-DirListing-itemModified,
+.jp-DirListing-item.jp-mod-dropTarget .jp-DirListing-itemFileSize {
+  color: inherit;
+}
+
+.jp-DirListing-item.lm-mod-drag-image,
+.jp-DirListing-item.jp-mod-selected.lm-mod-drag-image {
+  background-color: var(--jp-layout-color2);
+  box-shadow: var(--jp-elevation-z2);
+  color: var(--jp-ui-font-color0);
+  border: var(--jp-border-width) solid var(--mech-gold);
+}
+
 .lm-CommandPalette-item.lm-mod-active,
 .jp-Completer-item.jp-mod-active,
 .jp-PluginList li.jp-mod-selected,
