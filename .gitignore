@@ -15,6 +15,9 @@ jupyterlab_mechanicum_dark_theme/_version.py
 # Edit at https://www.gitignore.io/?templates=python
 
 ### Python ###
+# Virtual environments
+.venv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -125,3 +128,7 @@ dmypy.json
 
 # drafts of the image model (tools/strip.py)
 wip/
+
+# Campaign and run output
+logs/
+tmp/

@@ -5,3 +5,5 @@ node_modules
 !/package.json
 jupyterlab_mechanicum_dark_theme
 .claude
+eslint.config.mjs
+.venv
