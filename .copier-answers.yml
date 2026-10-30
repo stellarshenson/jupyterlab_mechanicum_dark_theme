@@ -8,7 +8,7 @@ has_ai_rules: false
 has_binder: false
 has_settings: false
 kind: theme
-labextension_name: jupyterlab_mechanicum_dark_theme
+labextension_name: '@stellarshenson/jupyterlab-mechanicum-dark-theme'
 project_short_description: Dark Adeptus Mechanicum theme for JupyterLab
 python_name: jupyterlab_mechanicum_dark_theme
 repository: ''

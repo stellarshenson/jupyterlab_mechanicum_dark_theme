@@ -1,7 +1,7 @@
 # Mechanicum Dark Theme
 
 [![GitHub Actions](https://github.com/stellarshenson/jupyterlab_mechanicum_dark_theme/actions/workflows/build.yml/badge.svg)](https://github.com/stellarshenson/jupyterlab_mechanicum_dark_theme/actions/workflows/build.yml)
-[![npm version](https://img.shields.io/npm/v/jupyterlab_mechanicum_dark_theme.svg)](https://www.npmjs.com/package/jupyterlab_mechanicum_dark_theme)
+[![npm version](https://img.shields.io/npm/v/@stellarshenson/jupyterlab-mechanicum-dark-theme.svg)](https://www.npmjs.com/package/@stellarshenson/jupyterlab-mechanicum-dark-theme)
 [![PyPI version](https://img.shields.io/pypi/v/jupyterlab-mechanicum-dark-theme.svg)](https://pypi.org/project/jupyterlab-mechanicum-dark-theme/)
 [![Total PyPI downloads](https://static.pepy.tech/badge/jupyterlab-mechanicum-dark-theme)](https://pepy.tech/project/jupyterlab-mechanicum-dark-theme)
 [![JupyterLab 4](https://img.shields.io/badge/JupyterLab-4-orange.svg)](https://jupyterlab.readthedocs.io/en/stable/)

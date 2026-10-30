@@ -44,8 +44,8 @@ artifacts = ["jupyterlab_mechanicum_dark_theme/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlab_mechanicum_dark_theme/labextension" = "share/jupyter/labextensions/jupyterlab_mechanicum_dark_theme"
-"install.json" = "share/jupyter/labextensions/jupyterlab_mechanicum_dark_theme/install.json"
+"jupyterlab_mechanicum_dark_theme/labextension" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-mechanicum-dark-theme"
+"install.json" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-mechanicum-dark-theme/install.json"
 
 [tool.hatch.build.hooks.version]
 path = "jupyterlab_mechanicum_dark_theme/_version.py"

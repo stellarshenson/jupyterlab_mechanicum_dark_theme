@@ -6,19 +6,19 @@ import {
 import { IThemeManager } from '@jupyterlab/apputils';
 
 /**
- * Initialization data for the jupyterlab_mechanicum_dark_theme extension.
+ * Initialization data for the @stellarshenson/jupyterlab-mechanicum-dark-theme extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab_mechanicum_dark_theme:plugin',
+  id: '@stellarshenson/jupyterlab-mechanicum-dark-theme:plugin',
   description:
     'Dark Adeptus Mechanicum theme: crimson cloth, gold embroidery, steel and parchment',
   autoStart: true,
   requires: [IThemeManager],
   activate: (app: JupyterFrontEnd, manager: IThemeManager) => {
     console.log(
-      'JupyterLab extension jupyterlab_mechanicum_dark_theme is activated!'
+      'JupyterLab extension @stellarshenson/jupyterlab-mechanicum-dark-theme is activated!'
     );
-    const style = 'jupyterlab_mechanicum_dark_theme/index.css';
+    const style = '@stellarshenson/jupyterlab-mechanicum-dark-theme/index.css';
 
     manager.register({
       name: 'Mechanicum Dark Theme',

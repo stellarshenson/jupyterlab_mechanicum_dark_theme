@@ -12,5 +12,5 @@ except ImportError:
 def _jupyter_labextension_paths():
     return [{
         "src": "labextension",
-        "dest": "jupyterlab_mechanicum_dark_theme"
+        "dest": "@stellarshenson/jupyterlab-mechanicum-dark-theme"
     }]
