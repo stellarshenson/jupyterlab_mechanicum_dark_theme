@@ -82,7 +82,7 @@ The theme follows the look of Warhammer 40,000. Its names and symbols belong to 
 
 The machine spirit asks for little:
 
-- JupyterLab >= 4.0.0
+- JupyterLab >= 4.6.0
 - a browser, and a will that does not break at the sight of crimson
 
 ## Install
