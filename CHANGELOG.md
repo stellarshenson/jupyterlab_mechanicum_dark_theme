@@ -4,6 +4,14 @@
 
 <!-- <END NEW CHANGELOG ENTRY> -->
 
+## [1.0.11] - 2026-10-30
+
+### Changed
+
+- The npm package is now `@stellarshenson/jupyterlab-mechanicum-dark-theme`. The old package `jupyterlab_mechanicum_dark_theme` stays on npm at 1.0.9. The PyPI distribution and `pip install jupyterlab-mechanicum-dark-theme` do not change
+- The theme now requires JupyterLab 4.6.0 or newer (was 4.0.0) and Python 3.10 or newer (was 3.8)
+- The project moves to extension template v4.6.5 and Makefile 1.46
+
 ## [1.0.9] - 2026-10-14
 
 ### Fixed
