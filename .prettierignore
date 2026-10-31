@@ -8,3 +8,4 @@ jupyterlab_mechanicum_dark_theme
 .agents
 eslint.config.mjs
 .venv
+package-lock.json

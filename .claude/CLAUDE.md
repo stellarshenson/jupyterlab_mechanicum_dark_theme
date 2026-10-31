@@ -23,7 +23,7 @@ The following workspace rules are STRICTLY ENFORCED for this project:
 
 JupyterLab theme extension with a dark Adeptus Mechanicum look: crimson cloth, gold embroidery, steel. A sibling of `jupyterlab_galaxalabs_steel_dark_theme`, from which the project structure comes.
 
-- npm package: `jupyterlab_mechanicum_dark_theme`
+- npm package: `@stellarshenson/jupyterlab-mechanicum-dark-theme`
 - PyPI package: `jupyterlab-mechanicum-dark-theme`
 - GitHub: https://github.com/stellarshenson/jupyterlab_mechanicum_dark_theme
 - The name and the symbols follow Warhammer 40,000, which belongs to Games Workshop: publishing is the owner's decision
