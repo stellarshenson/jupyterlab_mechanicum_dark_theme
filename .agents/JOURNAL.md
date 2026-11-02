@@ -51,3 +51,6 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 16. **Task - Require Python 3.12** (v1.0.14): raised the minimum Python to 3.12 on the owner's decision<br>
     **Result**: `requires-python` in `pyproject.toml` moved to `>=3.12`, and the classifiers for Python 3.10 and 3.11 are removed. Runtime floors already excluded older versions on some extensions, where pip then installed a release from before the scoped npm rename with no error. The dependency floors stay. `uv pip compile --python-version 3.12` resolves every runtime requirement, and CI runs Python 3.13.
+
+17. **Task - Red link check after the Makefile 1.48 commit** (v1.0.14): Build failed at the external links in `README.md`, not in the code<br>
+    **Result**: Build 41435350039 failed at `check-links`: `https://pepy.tech/project/jupyterlab-mechanicum-dark-theme: 503: Service Unavailable`, then, after that host was ignored, `https://www.paypal.com/donate/?hosted_button_id=B4KPBJDLLXTSA: 403: Forbidden`. Both hosts refuse or fail the automated checker from a GitHub runner; sibling extension workflows already carry both patterns in `ignore_links`. Added `https://pepy.tech/.* https://static.pepy.tech/.* https://www.paypal.com/.*` to `.github/workflows/build.yml`, commits `72e3d4a` and `a5fdd78`. CI green: Build 41441374958 and Check Release 41441374675. Badges stay.
