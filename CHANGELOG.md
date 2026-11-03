@@ -2,6 +2,12 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.15] - 2026-11-03
+
+### Changed
+
+- No change to the theme: released with the other themes after the bookmarks panel gained a divider above its first section band, which this theme already shows
+
 ## [1.0.14] - 2026-10-31
 
 ### Changed
